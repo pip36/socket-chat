@@ -1,0 +1,24 @@
+{
+  "name": "socket-chat",
+  "version": "1.0.0",
+  "description": "chat app to try out socket io",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pip36/socket-chat.git"
+  },
+  "author": "pip36",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pip36/socket-chat/issues"
+  },
+  "homepage": "https://github.com/pip36/socket-chat#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "socket.io": "^2.0.4"
+  }
+}
