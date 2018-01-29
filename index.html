@@ -2,18 +2,24 @@
 <html>
     <head>
         <title> Chat App </title>
+        <link rel="stylesheet" type="text/css" href="styles/style.css">
         <script src="https://code.jquery.com/jquery-1.11.1.js"></script>
         <script src="/socket.io/socket.io.js"></script>
     </head>
-    <body>
-        <h1>hello world</h1>
+    <body>    
+        
+        
+        <ul id="messages"></ul>     
         
         <form action="">
-            <input id="chat"/>
-            <button> send </button>
+            <div class="chat-container">
+                <input id="chat"/>
+            </div>
+            <div class="send-container">
+                <button id="send"> send </button>
+            </div>        
         </form>
-
-        <ul id="messages"></ul>
+        
   
         <script>
             $(function () {
@@ -25,8 +31,18 @@
                 })
                 socket.on('chat message', function(msg){
                     $('#messages').append($('<li>').text(msg))
+                    updateScroll()
                 })
-              })
+                socket.on('log message', function(msg){
+                    $('#messages').append($('<li class="log-message">').text(msg))
+                    updateScroll()
+                })
+
+                function updateScroll () {
+                    var messages = document.getElementById('messages');
+                    messages.scrollTop = messages.scrollHeight;
+                }
+            })
             
         </script>
     </body>

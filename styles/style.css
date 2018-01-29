@@ -1,0 +1,46 @@
+.log-message {
+    color: red;
+}
+
+#messages {
+  list-style: none;
+  position: relative;
+  height:600px;
+  overflow-y: scroll;
+}
+
+#messages li {
+    height: 50px;
+}
+#messages li:nth-child(odd) {
+    background: lightblue;
+}
+#messages li:nth-child(even) {
+    background: #f8f8f8;
+}
+
+form {
+    height: 55px;
+    width: 100%;
+}
+
+.chat-container {
+    width: 75%;
+    height: 100%;
+    display: inline-block;
+}
+.send-container {
+    width: 20%;
+    display: inline-block;
+    text-align: center;
+}
+
+#chat {
+    height: 100%;
+    width: 100%;
+}
+
+#send {
+  height: 30px;
+  width: 60px;
+}
