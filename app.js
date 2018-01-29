@@ -14,7 +14,9 @@ app.get('/', (req, res) => {
 io.on('connection', function(socket){
     io.emit('log message', 'New user has joined!');
     socket.on('chat message', function(msg){
-        io.emit('chat message', msg);
+        let d = new Date()
+        let timestamp = d
+        io.emit('chat message', msg, timestamp);
     })
     socket.on('disconnect', function(){
         io.emit('log message', 'User has left!');

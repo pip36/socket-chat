@@ -25,8 +25,9 @@
                     $('#chat').val('')
                     return false;
                 })
-                socket.on('chat message', function(msg){
+                socket.on('chat message', function(msg, timestamp){
                     $('#messages').append($('<li>').text(msg))
+                    $('#messages li').last().append('<p class="timestamp"> Sent at: ' + timestamp + '</p>')
                     updateScroll()
                 })
                 socket.on('log message', function(msg){
